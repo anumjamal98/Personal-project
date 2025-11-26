@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Personal-project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Navbar</title>
+  <style>
+    /* Navbar container */
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Navbar links */
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Hover effect */
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    /* Logo */
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Essentae Perfumes</h1>
-    <ul>
-       <li>Women</li>
-       <li>Men</li>
 
-    </ul>
+  <nav>
+    <div class="logo">MyWebsite</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
 </body>
 </html>
