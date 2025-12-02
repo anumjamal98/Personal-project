@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Essentae</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .checkout-hero {
+            background: linear-gradient(rgba(138, 109, 59, 0.9), rgba(138, 109, 59, 0.8));
+            color: white;
+            padding: 120px 0 60px;
+            margin-top: -76px;
+        }
+        
+        .checkout-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .step-number.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .step-text {
+            font-weight: 500;
+        }
+        
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 10px;
+            padding: 5px;
+        }
+        
+        .remove-item {
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .summary-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-row.total {
+            border-bottom: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .payment-method {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary);
+        }
+        
+        .payment-method.selected {
+            border-color: var(--primary);
+            background: rgba(138, 109, 59, 0.05);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .empty-cart-icon {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-spa"></i> ESSENTAE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="checkout.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== CHECKOUT HERO ========== -->
+    <section class="checkout-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Checkout</h1>
+                    <p class="lead mb-0">Complete your purchase and experience the Essentae luxury</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CHECKOUT STEPS ========== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="checkout-step">
+                        <div class="step-number active">1</div>
+                        <div class="step-text">Shopping Cart</div>
+                    </div>
+                    <div class="checkout-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Delivery Information</div>
+                    </div>
+                    <div class="checkout-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Payment Method</div>
+                    </div>
+                    <div class="checkout-step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Order Confirmation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CART ITEMS ========== -->
+    <section class="py-5" id="cartSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="mb-4">Your Cart</h3>
+                    
+                    <!-- Cart Items Container -->
+                    <div id="cartItemsContainer">
+                        <!-- Cart items will be loaded here by JavaScript -->
+                        <div class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Empty Cart Message (hidden by default) -->
+                    <div class="empty-cart d-none" id="emptyCartMessage">
+                        <div class="empty-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4>Your cart is empty</h4>
+                        <p class="mb-4">Add some products to your cart before checkout</p>
+                        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                    
+                    <!-- Continue Shopping -->
+                    <div class="mt-4">
+                        <a href="products.html" class="btn btn-outline-dark">
+                            <i class="fas fa-arrow-left me-2"></i> Continue Shopping
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== ORDER SUMMARY ========== -->
+                <div class="col-lg-4">
+                    <div class="summary-box">
+                        <h4 class="mb-4">Order Summary</h4>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">Rs 0</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="shipping">Rs 200</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Tax (13%)</span>
+                            <span id="tax">Rs 0</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="total">Rs 0</span>
+                        </div>
+                        
+                        <!-- Delivery Information -->
+                        <div class="mt-4">
+                            <h5 class="mb-3">Delivery Information</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="deliveryEmail" placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="deliveryPhone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Address</label>
+                                <textarea class="form-control" id="deliveryAddress" rows="3" placeholder="Enter your full address"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" id="deliveryCity" placeholder="Enter your city">
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Methods -->
+                        <div class="mt-4">
+                            <h5 class="mb-3">Payment Method</h5>
+                            
+                            <div class="payment-method" data-method="cod">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cod" checked>
+                                    <label class="form-check-label" for="cod">
+                                        <i class="fas fa-money-bill-wave me-2"></i> Cash on Delivery
+                                    </label>
+                                </div>
+                                <p class="small text-muted mb-0 mt-2">Pay when you receive your order</p>
+                            </div>
+                            
+                            <div class="payment-method" data-method="card">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="card">
+                                    <label class="form-check-label" for="card">
+                                        <i class="fas fa-credit-card me-2"></i> Credit/Debit Card
+                                    </label>
+                                </div>
+                                <p class="small text-muted mb-0 mt-2">Pay securely with your card</p>
+                            </div>
+                            
+                            <div class="payment-method" data-method="jazzcash">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="jazzcash">
+                                    <label class="form-check-label" for="jazzcash">
+                                        <i class="fas fa-mobile-alt me-2"></i> JazzCash
+                                    </label>
+                                </div>
+                                <p class="small text-muted mb-0 mt-2">Pay via JazzCash mobile wallet</p>
+                            </div>
+                            
+                            <div class="payment-method" data-method="easypaisa">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="easypaisa">
+                                    <label class="form-check-label" for="easypaisa">
+                                        <i class="fas fa-wallet me-2"></i> EasyPaisa
+                                    </label>
+                                </div>
+                                <p class="small text-muted mb-0 mt-2">Pay via EasyPaisa mobile wallet</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Place Order Button -->
+                        <button class="btn btn-primary btn-lg w-100 mt-4" id="placeOrderBtn">
+                            <i class="fas fa-lock me-2"></i> Place Order
+                        </button>
+                        
+                        <p class="small text-center mt-3">
+                            By placing your order, you agree to our 
+                            <a href="#">Terms & Conditions</a> and 
+                            <a href="#">Privacy Policy</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>ESSENTAE</h4>
+                    <p>Premium fragrances that define your personality</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Perfume Street, Karachi, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@essentae.pk</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Essentae. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Checkout JS -->
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>

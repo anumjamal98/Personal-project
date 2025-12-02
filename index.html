@@ -1,49 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal-project</title>
-    /* Navbar container */
-    nav {
-      background-color: #333;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Navbar links */
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Hover effect */
-    nav a:hover {
-      color: #ff9800;
-    }
-
-    /* Logo */
-    .logo {
-      font-weight: bold;
-      font-size: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essentae - Premium Fragrance Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-spa"></i> ESSENTAE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="checkout.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <nav>
-    <div class="logo">Essentae Perfumes</div>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </div>
-  </nav>
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Experience The Essence of Luxury</h1>
+                <p class="hero-subtitle">Premium Fragrances Crafted with Passion and Precision</p>
+                <a href="products.html" class="btn btn-primary">Shop Collection</a>
+                <a href="#features" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- FEATURED CATEGORIES -->
+    <section class="categories py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Shop By Category</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="category-card men">
+                        <div class="category-icon">
+                            <i class="fas fa-mars"></i>
+                        </div>
+                        <h3>For Men</h3>
+                        <p>Bold, masculine scents that make a statement</p>
+                        <a href="products.html?category=men" class="btn btn-category">Explore Men's Collection</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="category-card women">
+                        <div class="category-icon">
+                            <i class="fas fa-venus"></i>
+                        </div>
+                        <h3>For Women</h3>
+                        <p>Elegant, floral fragrances that captivate</p>
+                        <a href="products.html?category=women" class="btn btn-category">Explore Women's Collection</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="category-card kids">
+                        <div class="category-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>For Kids</h3>
+                        <p>Gentle, fun scents for the little ones</p>
+                        <a href="products.html?category=kids" class="btn btn-category">Explore Kids Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured-products py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Featured Products</h2>
+            <div class="row" id="featuredProducts">
+                <!-- Featured products loaded via JS -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html" class="btn btn-view-all">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The best fragrances I've ever purchased! Lasts all day and gets compliments everywhere I go."</p>
+                        <div class="testimonial-author">
+                            <strong>Sarah Johnson</strong>
+                            <p>Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Essentae changed my perfume game. The quality is unmatched at this price point."</p>
+                        <div class="testimonial-author">
+                            <strong>Sarim Khan</strong>
+                            <p>Perfume Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Perfect gifts for my family. The kids collection is gentle and safe. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <strong>Amna Zaidi</strong>
+                            <p>Happy Parent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Why Choose Essentae?</h2>
+            <div class="row">
+                <div class="col-md-3 text-center mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-award feature-icon"></i>
+                        <h4>Premium Quality</h4>
+                        <p>100% authentic ingredients sourced from France and Italy</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-truck feature-icon"></i>
+                        <h4>Free Shipping</h4>
+                        <p>Free delivery on orders above Rs.2000 across Pakistan</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h4>100% Safe</h4>
+                        <p>Dermatologically tested, safe for all skin types</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h4>24/7 Support</h4>
+                        <p>Our customer care team is always here to help you</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Stay Updated</h2>
+            <p class="mb-4">Subscribe to get exclusive offers and fragrance tips</p>
+            <form class="newsletter-form">
+                <div class="input-group mx-auto" style="max-width: 500px;">
+                    <input type="email" class="form-control" placeholder="Your email address" required>
+                    <button class="btn btn-subscribe" type="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>ESSENTAE</h4>
+                    <p>Premium fragrances that define your personality</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fragrance Street, Karachi, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@essentae.com</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Essentae. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

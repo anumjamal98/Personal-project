@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Sauvage",
+    "price": 100000,
+    "category": "men",
+    "image": "assets/images/men-1.jpg",
+    "description": "A bold and masculine scent with woody undertones"
+  },
+  {
+    "id": 2,
+    "name": "Direction",
+    "price": 18000,
+    "category": "men",
+    "image": "assets/images/men-2.webp",
+    "description": "Refreshing aquatic fragrance for everyday wear"
+  },
+  {
+    "id": 3,
+    "name": "Success",
+    "price": 32000,
+    "category": "men",
+    "image": "assets/images/men-3.webp",
+    "description": "Luxurious blend of leather and oud for special occasions"
+  },
+  {
+    "id": 4,
+    "name": "Bella Ciao",
+    "price": 15000,
+    "category": "men",
+    "image": "assets/images/men-4.webp",
+    "description": "Energetic scent perfect for active lifestyles"
+  },
+  {
+    "id": 5,
+    "name": "Dior",
+    "price": 28000,
+    "category": "men",
+    "image": "assets/images/men-5.png",
+    "description": "Intense and mysterious fragrance for evening wear"
+  },
+  {
+    "id": 6,
+    "name": "Creed",
+    "price": 120000,
+    "category": "men",
+    "image": "assets/images/men-06.png",
+    "description": "Zesty citrus notes for a fresh start"
+  },
+  {
+    "id": 7,
+    "name": "Engulf",
+    "price": 21000,
+    "category": "women",
+    "image": "assets/images/wo-1.webp",
+    "description": "Delicate floral bouquet with rose and jasmine"
+  },
+  {
+    "id": 8,
+    "name": "Chanel",
+    "price": 100000,
+    "category": "women",
+    "image": "assets/images/wo-2.jpg",
+    "description": "Sweet and comforting vanilla fragrance"
+  },
+  {
+    "id": 9,
+    "name": "Obsession",
+    "price": 5000,
+    "category": "women",
+    "image": "assets/images/wo-3.jpg",
+    "description": "Classic rose scent with modern twist"
+  },
+  {
+    "id": 10,
+    "name": "Calvin Klien Beauty",
+    "price": 22000,
+    "category": "women",
+    "image": "assets/images/wo-4.jpg",
+    "description": "Light and airy jasmine fragrance"
+  },
+  {
+    "id": 11,
+    "name": "La Femme Bloom",
+    "price": 26000,
+    "category": "women",
+    "image": "assets/images/wo-5.webp",
+    "description": "Sparkling and sophisticated scent"
+  },
+  {
+    "id": 12,
+    "name": "Sophia",
+    "price": 18000,
+    "category": "women",
+    "image": "assets/images/wo-6.webp",
+    "description": "Fresh and light fragrance for summer days"
+  },
+  {
+    "id": 13,
+    "name": "Jimmy Choo",
+    "price": 30000,
+    "category": "women",
+    "image": "assets/images/wo-7.webp",
+    "description": "Premium floral blend for special occasions"
+  },
+  {
+    "id": 14,
+    "name": "Nexton cologne for kids",
+    "price": 1850,
+    "category": "kids",
+    "image": "assets/images/kid-1.webp",
+    "description": "Gentle bubblegum scent for kids"
+  },
+  {
+    "id": 15,
+    "name": "Nexton Boys",
+    "price": 1750,
+    "category": "kids",
+    "image": "assets/images/ki-2.webp",
+    "description": "Fun fruity fragrance with apple and strawberry notes"
+  },
+  {
+    "id": 16,
+    "name": "Bear Perfume",
+    "price": 1900,
+    "category": "kids",
+    "image": "assets/images/kid-3.jpg",
+    "description": "Sweet candy-like fragrance"
+  },
+  {
+    "id": 17,
+    "name": "Love nature kids",
+    "price": 1800,
+    "category": "kids",
+    "image": "assets/images/kid-4.jpg",
+    "description": "Straberry blend with blueberry and raspberry"
+  },
+  {
+    "id": 18,
+    "name": "Sing Perfume",
+    "price": 1950,
+    "category": "kids",
+    "image": "assets/images/kid-5.webp",
+    "description": "Colorful and fun fragrance collection"
+  },
+  {
+    "id": 19,
+    "name": "Creed",
+    "price": 120000,
+    "category": "men",
+    "image": "assets/images/men-6.jpg",
+    "description": "Fresh and clean scent suitable for all"
+  },
+  {
+    "id": 20,
+    "name": "Bellavita",
+    "price": 30000,
+    "category": "women",
+    "image": "assets/images/gift set.webp",
+    "description": "Luxury gift set with body lotion"
+  }
+]
