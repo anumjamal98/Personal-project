@@ -3,73 +3,73 @@
 const galleryImages = [
     {
         id: 1,
-        src: "assets/images/gallery/men-perfume-1.jpg",
+        src: "assets/images/men-1.jpg",
         category: "men",
-        title: "Men's Signature Collection"
+        title: "Sauvage"
     },
     {
         id: 2,
-        src: "assets/images/gallery/men-perfume-2.jpg",
+        src: "assets/images/men-2.webp",
         category: "men",
         title: "Men's Luxury Edition"
     },
     {
         id: 3,
-        src: "assets/images/gallery/women-perfume-1.jpg",
+        src: "assets/images/wo-1.webp",
         category: "women",
         title: "Women's Floral Elegance"
     },
     {
         id: 4,
-        src: "assets/images/gallery/women-perfume-2.jpg",
+        src: "assets/images/wo-2.jpg",
         category: "women",
         title: "Women's Evening Glam"
     },
     {
         id: 5,
-        src: "assets/images/gallery/kids-perfume-1.jpg",
+        src: "assets/images/kid-1.webp",
         category: "kids",
         title: "Kids Bubble Fun"
     },
     {
         id: 6,
-        src: "assets/images/gallery/kids-perfume-2.jpg",
+        src: "assets/images/ki-2.webp",
         category: "kids",
         title: "Kids Fruit Fantasy"
     },
     {
         id: 7,
-        src: "assets/images/gallery/packaging-1.jpg",
+        src: "assets/images/packaging.01.jpg",
         category: "packaging",
         title: "Premium Packaging"
     },
     {
         id: 8,
-        src: "assets/images/gallery/packaging-2.jpg",
+        src: "assets/images/packaging.02.jpg",
         category: "packaging",
         title: "Gift Box Collection"
     },
     {
         id: 9,
-        src: "assets/images/gallery/store-1.jpg",
+        src: "assets/images/perfume store interior.webp",
         category: "store",
         title: "Our Store Interior"
     },
     {
         id: 10,
-        src: "assets/images/gallery/making-1.jpg",
+        src: "assets/images/perfume making process.jpg",
         category: "making",
         title: "Perfume Making Process"
     },
     {
         id: 11,
-        src: "assets/images/gallery/ingredients-1.jpg",
+        src: "assets/images/ingredients.jpg",
         category: "ingredients",
         title: "Natural Ingredients"
     },
     {
         id: 12,
-        src: "assets/images/gallery/event-1.jpg",
+        src: "assets/images/launch event.png",
         category: "events",
         title: "Fragrance Launch Event"
     }
